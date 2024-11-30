@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Base Template</title>
+</head>
+<body>
+<!-- Define the header fragment -->
+<header>
+    <nav th:replace="organisms/navbar :: navbar"></nav>
+</header>
+
+<!-- Define the content fragment -->
+<main th:fragment="html(content)">
+    <div th:replace="${content}"></div>
+</main>
+
+<footer>
+    <footer th:replace="templates/footer :: footer"></footer>
+</footer>
+</body>
+</html>

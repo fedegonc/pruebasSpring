@@ -1,0 +1,12 @@
+<!-- File: fragments/molecules.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<body>
+<div th:fragment="formField(label, fieldId)">
+    <label th:for="${fieldId}" th:text="${label}">Label</label>
+    <label>
+        <input type="text" th:id="${fieldId}" th:name="${fieldId}" />
+    </label>
+</div>
+</body>
+</html>

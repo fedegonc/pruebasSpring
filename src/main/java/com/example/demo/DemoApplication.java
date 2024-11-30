@@ -7,7 +7,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication app = new SpringApplication(DemoApplication.class);
+
+		// Hook para cerrar recursos al detener la aplicación
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+			System.out.println("Cerrando recursos...");
+		}));
+
+		app.run(args);
 	}
 
 }
+

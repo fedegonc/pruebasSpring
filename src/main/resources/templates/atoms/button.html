@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<button th:fragment="button(class, label)" th:class="${class}" type="button">
+    <span th:text="${label}">Button</span>
+</button>
+</body>
+</html>
