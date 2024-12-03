@@ -11,6 +11,15 @@ RUN mvn dependency:go-offline
 # Copiar el código fuente de la aplicación
 COPY ./src ./src
 
+
+# Instalar dependencias de Stylus
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copiar archivos Stylus y compilar a CSS
+COPY src/main/resources/static/stylus/ ./src/main/resources/static/stylus/
+RUN npm run build-css
+
 # Construir la aplicación
 RUN mvn clean package -DskipTests
 
