@@ -1,0 +1,23 @@
+.btn
+  padding 0.5rem 1rem
+  font-size 1rem
+  color white
+  background-color #007bff
+  border none
+  border-radius 0.25rem
+  cursor pointer
+  transition background-color 0.3s ease
+
+  &:hover
+    background-color darken(#007bff, 10%)
+
+  &--secondary
+    background-color #6c757d
+
+    &:hover
+      background-color darken(#6c757d, 10%)
+
+  &--disabled
+    background-color #e0e0e0
+    color #6c757d
+    cursor not-allowed

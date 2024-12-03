@@ -7,6 +7,15 @@
     <h1>Welcome to my website!</h1>
     <p>This is the home page content.</p>
 </div>
+<section>
+    <div th:replace="~{atoms/button :: button(
+    type='button',
+    style='btn btn-primary',
+    label='Click Me',
+    id='button1',
+    disabled=false)}">
+    </div>
+</section>
 </body>
 </html>
 

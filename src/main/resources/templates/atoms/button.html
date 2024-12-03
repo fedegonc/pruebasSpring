@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<button th:fragment="button(class, label)" th:class="${class}" type="button">
-    <span th:text="${label}">Button</span>
-</button>
+<!-- Define el fragmento con parámetros explícitos -->
+<div th:fragment="button(type, style, label, id, disabled)">
+    <button
+            class="btn"
+            th:classappend="${style}"
+            th:type="${type}"
+            th:disabled="${disabled ? 'disabled' : null}"
+            th:attr="id=${id}">
+        <span th:text="${label}">Button</span>
+    </button>
+</div>
 </body>
 </html>
