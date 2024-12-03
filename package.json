@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Demo Spring Boot Application using Stylus for CSS preprocessing",
+  "scripts": {
+    "build-css": "stylus src/main/resources/static/stylus/ -o src/main/resources/static/css/"
+  },
+  "dependencies": {
+    "stylus": "^0.55.0"
+  }
+}

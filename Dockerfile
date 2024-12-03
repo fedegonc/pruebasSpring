@@ -1,4 +1,4 @@
-# Etapa 1: Construcción de la aplicación
+# Etapa 1: Construcción de la aplicación con Maven
 FROM maven:3.8.6-openjdk-18 AS builder
 WORKDIR /app
 
@@ -9,36 +9,37 @@ COPY pom.xml ./pom.xml
 RUN mvn dependency:go-offline
 
 # Copiar el código fuente de la aplicación
-COPY src ./src
+COPY ./src ./src
 
 # Construir la aplicación
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Generar CSS a partir de Stylus
+# Etapa 2: Generación de CSS con Stylus
 FROM node:18-alpine AS stylus-builder
 WORKDIR /app
 
-# Copiar el archivo de bloqueo de dependencias para npm
-COPY package-lock.json ./
+# Copiar archivo package.json y package-lock.json
+COPY package.json ./package.json
+COPY package-lock.json ./package-lock.json
 
 # Instalar dependencias de Stylus
-RUN npm ci
+RUN npm install
 
-# Copiar los archivos Stylus
+# Copiar archivos Stylus
 COPY src/main/resources/static/stylus/ ./stylus/
 
 # Compilar Stylus a CSS
-RUN npx stylus ./stylus/ -o ./css/
+RUN npm run build-css
 
-# Etapa 3: Generar la imagen para producción
+# Etapa 3: Imagen de producción
 FROM openjdk:18-jdk-alpine
 WORKDIR /app
 
 # Copiar el JAR generado desde la etapa Maven
 COPY --from=builder /app/target/*.jar app.jar
 
-# Copiar los archivos CSS generados por Stylus
-COPY --from=stylus-builder /app/css/ ./resources/static/css/
+# Copiar los archivos CSS generados desde la etapa Stylus
+COPY --from=stylus-builder /app/src/main/resources/static/css/ ./resources/static/css/
 
 # Exponer el puerto en el que la aplicación se ejecutará
 EXPOSE 8080
