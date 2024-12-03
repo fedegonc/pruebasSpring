@@ -13,7 +13,7 @@ COPY ./src ./src
 
 
 # Instalar dependencias de Stylus
-COPY package.json package-lock.json ./
+COPY package-lock.json ./
 RUN npm install
 
 # Copiar archivos Stylus y compilar a CSS
