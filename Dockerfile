@@ -3,13 +3,13 @@ FROM maven:3.8.6-openjdk-18 AS builder
 WORKDIR /app
 
 # Copiar el archivo de configuración de Maven
-COPY ./pom.xml ./pom.xml
+COPY pom.xml ./pom.xml
 
 # Descargar dependencias para cachearlas
 RUN mvn dependency:go-offline
 
 # Copiar el código fuente de la aplicación
-COPY ./src ./src
+COPY src ./src
 
 # Construir la aplicación
 RUN mvn clean package -DskipTests
