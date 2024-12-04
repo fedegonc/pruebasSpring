@@ -2,8 +2,89 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title th:text="${title}">Base Template</title>
-    <link rel="stylesheet" th:href="@{/css/main.css}">
+    <!-- Estilos globales incluidos directamente -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${title}">Base Template</title>
 
+    <!-- Fuente Roboto desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Estilos base específicos de la plantilla -->
+    <style>
+        /* Estilos generales para la página */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header y navegación */
+        header {
+            background-color: #222;
+            color: white;
+            padding: 1rem;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem; /* Espaciado entre enlaces */
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para el contenido principal */
+        main {
+            padding: 2rem;
+            text-align: center; /* Centrar contenido */
+        }
+
+        main h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        main p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #87ceeb;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
 </head>
 <body>
 <!-- Define the header fragment -->

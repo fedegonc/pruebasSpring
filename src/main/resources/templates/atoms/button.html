@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<style>
+    /* Botón */
+        button {
+            background-color: darkblue;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+    .btn-primary {
+        background-color: blue;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: darkblue;
+    }
+
+    .btn[disabled] {
+        background-color: #e0e0e0;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+</style>
 <body>
 <!-- Define el fragmento con parámetros explícitos -->
 <div th:fragment="button(type, style, label, id, disabled)">
