@@ -17,7 +17,8 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("primaryButton", new ButtonConfig("button", "btn-primary", "Click Me", "primaryBtn", false));
+        model.addAttribute("brandText", "Gregario Tallados");
+        model.addAttribute("link", "/home");
         return "pages/home";
     }
 

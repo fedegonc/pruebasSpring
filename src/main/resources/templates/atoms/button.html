@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <body>
 <!-- Define el fragmento con parámetros explícitos -->
 <div th:fragment="button(type, style, label, id, disabled)">
     <button
-            class="btn"
-            th:classappend="${style}"
+            style="padding: 8px 16px;
+            font-weight: 600;
+            color: white;
+            background-color: #4caf50;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;"
+            th:styleappend="${style}"
             th:type="${type}"
             th:disabled="${disabled ? 'disabled' : null}"
             th:attr="id=${id}">

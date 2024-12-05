@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-<nav th:fragment="navbar">
-    <ul>
-        <li><a th:href="@{/}">Home</a></li>
-        <li><a th:href="@{/about}">About</a></li>
-        <li><a th:href="@{/contact}">Contact</a></li>
-        <li><a th:href="@{/login}">Login</a></li>
-    </ul>
-</nav>
+<div th:fragment="navbar"
+     style="display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 20px;
+     background-color: #f4f4f4;">
+
+    <div>
+        <!-- Uso del fragmento BrandName -->
+        <div th:replace="~{molecules/logo :: logo}"></div>
+    </div>
+
+    <!-- Enlaces -->
+
+</div>
 </body>
-</html>
+

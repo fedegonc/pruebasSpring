@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Estilos base específicos de la plantilla -->
     <style>
-        /* Estilos generales para la página */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -22,94 +21,38 @@
             color: #333;
         }
 
-        /* Header y navegación */
-        header {
+        header, footer {
             background-color: #222;
             color: white;
-            padding: 1rem;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem; /* Espaciado entre enlaces */
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        header nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilos para el contenido principal */
-        main {
-            padding: 2rem;
-            text-align: center; /* Centrar contenido */
-        }
-
-        main h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        main p {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-/* Botón */
-        button {
-            background-color: darkblue;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: blue;
-        }
-
-    .btn-primary {
-        background-color: blue;
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: darkblue;
-    }
-
-    .btn[disabled] {
-        background-color: #e0e0e0;
-        color: #6c757d;
-        cursor: not-allowed;
-    }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 1rem;
             text-align: center;
+            padding: 1rem 0;
         }
 
-        footer a {
-            color: #87ceeb;
-            text-decoration: none;
-            font-size: 0.9rem;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .btn {
+            padding: 8px 16px;
+            font-weight: 600;
+            color: white;
+            background-color: #4caf50;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        footer p {
-            margin: 0.5rem 0;
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn[disabled] {
+            background-color: #e0e0e0;
+            color: #6c757d;
+            cursor: not-allowed;
         }
     </style>
 </head>

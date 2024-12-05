@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Fragmento estático para las iniciales del nombre de la marca -->
+<div th:fragment="initials">
+  <div style="
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            border-radius: 50%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;">
+    <!-- Texto estático de las iniciales -->
+    <span>GT</span>
+  </div>
+</div>
+</body>
+</html>

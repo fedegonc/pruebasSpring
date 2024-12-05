@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="logo">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background-color: #f4f4f4;">
+        <!-- Logo Iniciales -->
+        <div>
+            <!-- Uso del fragmento BrandName -->
+            <div th:replace="~{atoms/initials :: initials}"></div>
+        </div>
+
+        <div>
+            <!-- Uso del fragmento BrandName -->
+            <div th:replace="~{atoms/brandname :: brandname}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

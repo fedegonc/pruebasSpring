@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Importación de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Atomo BrandName -->
+<div th:fragment="brandname">
+    <a href="/home"
+       style="display: inline-block;
+                  text-decoration: none;
+                  color: #4caf50;
+                  font-weight: bold;
+                  font-size: 1.8rem;
+                  font-family: 'Playfair Display', serif;
+                  letter-spacing: 1px;
+                  transition: color 0.3s ease;">
+        <!-- Texto estático del Brand -->
+        <span>Gregario Tallados</span>
+    </a>
+</div>
+</body>
+</html>
